@@ -1,30 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="script.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant</title>
+    <title>Menú</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<header>
-    <div class="header-container">
-        <a href="#home">
-            <img src="images/logo.jpeg" alt="Logo" class="logo">
-        </a>
-        <nav>
-            <ul>
-                <li><a href="#home">Inicio</a></li>
-                <li><a href="menu.html">Menú</a></li>
-                <li><a href="#reservations">Reservas</a></li>
-                <li><a href="#about">Conócenos</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
 <body>
+    <header>
+        <div class="header-container">
+            <a href="#home">
+                <img src="images/logo.jpeg" alt="Logo" class="logo">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="menu.html">Menú</a></li>
+                    <li><a href="#reservations">Reservas</a></li>
+                    <li><a href="#about">Conócenos</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
     <section id="home">
         <div class="welcome-container">
             <h2>Bienvenidos a Espacio San Marcos</h2>
@@ -38,8 +43,6 @@
             "La belleza radica en la simplicidad."
         </blockquote>
     </section>
-
-
 
     <section id="about">
         <h2>Conócenos</h2>
@@ -62,14 +65,40 @@
             </div>
         </div>
     </section>
+
+    <section id="dish4" class="dish hidden">
+        <h3>Pizza</h3>
+        <p>Descripción y detalles sobre la Pizza.</p>
+    </section>
+    <section id="dish5" class="dish hidden">
+        <h3>Pastelería</h3>
+        <p>Descripción y detalles sobre la Pastelería.</p>
+    </section>
     
-    <footer id="main-footer">
+    <footer>
         <div class="footer-logos-container">
             <img src="icons/patrocinador1.png" alt="Logo 1" class="footer-logo">
             <img src="icons/patrocinador2.png" alt="Logo 2" class="footer-logo">
             <img src="icons/patrocinador3.png" alt="Logo 3" class="footer-logo">
         </div>
+        <p>Contact us at: (123) 456-7890</p>
     </footer>
-    
+
+    <script>
+        function showDish(dishId) {
+            const dishes = document.querySelectorAll('.dish');
+            dishes.forEach(dish => dish.classList.add('hidden'));
+
+            const selectedDish = document.getElementById(dishId);
+            selectedDish.classList.remove('hidden');
+
+            selectedDish.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
