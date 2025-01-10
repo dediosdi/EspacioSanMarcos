@@ -12,23 +12,26 @@
     font-family: 'BodyFont'; 
     src: url('fonts/aileron_0102/Aileron-Regular.otf') format('truetype'); 
 }
-
+html {
+    scroll-behavior: smooth;
+}
+/* Estilos generales */
 body {
     font-family: 'Aileron', sans-serif;
     margin: 0;
     padding: 0;
-   
-
+    box-sizing: border-box;
 }
 
 h2 {
     font-family: 'Aileron', sans-serif;
     font-size: 3.4em;
+    font-weight: lighter;q
     color: #333;
 }
 
+/* Header */
 header {
-    font-family: 'Aileron', sans-serif;
     background-color: white;
     color: #333;
     padding: 1em 0;
@@ -36,16 +39,32 @@ header {
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+    z-index: 1000;
 }
 
 .header-container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1em;
+    padding: 0 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
 }
 
 header .logo {
@@ -115,10 +134,34 @@ footer {
     color: white;
     text-align: center;
     padding: 1em 0;
-    position: fixed;
+    position: relative;
     width: 100%;
     bottom: 0;
 }
+
+#main-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+#main-footer .footer-logos-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#main-footer .footer-logo {
+    width: 100px;
+    height: auto;
+    filter: invert(100%) sepia(0%) saturate(100%) hue-rotate(0deg) brightness(100%) contrast(300%);
+}
+
 
 /* Cards del menú */
 .menu-cards {
@@ -154,6 +197,112 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Galería de imágenes */
+.about-gallery {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.about-gallery h3 {
+    font-family: 'H2Font', sans-serif;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.gallery-image {
+    width: calc(25% - 10px); /* Ajusta el tamaño de las imágenes */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive para la galería */
+@media (max-width: 768px) {
+    .gallery-image {
+        width: calc(50% - 10px); /* Ajusta el tamaño en pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-image {
+        width: 100%; /* Ajusta el tamaño en pantallas pequeñas */
+    }
+}
+/* Bloque de texto minimalista */
+#minimalist-text {
+    text-align: center;
+    margin: 50px 0;
+    font-family: 'Aileron', sans-serif;
+    font-size: 2em;
+    color: #555;
+    font-style: italic;
+}
+
+#minimalist-text blockquote {
+    quotes: "“" "”";
+}
+
+#minimalist-text blockquote::before {
+    content: open-quote;
+    font-size: 3em;
+    vertical-align: -0.4em;
+    color: #bbb;
+}
+
+#minimalist-text blockquote::after {
+    content: close-quote;
+    font-size: 3em;
+    vertical-align: -0.4em;
+    color: #bbb;
+}
+
+/* Galería de imágenes */
+.gallery-container {
+    margin: 30px auto;
+    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+
 /* Secciones de platos */
 .dish {
     padding: 2em;
@@ -186,6 +335,10 @@ footer {
 }
 /* Contenedor del mapa */
 .map-container {
+    flex: 1;
+    min-width: 300px;
+    height: 300px;
+    margin: 0 auto;
     width: 90%;
     max-width: 900px;
     height: 500px;
@@ -212,6 +365,11 @@ footer {
     margin-top: 20px;
 }
 
+.scroll-button img {
+    width: 50px;
+    height: auto;
+}
+
 .scroll-button:hover {
     transform: translateY(5px);
 }
@@ -221,6 +379,84 @@ footer {
     padding: 50px;
     background-color: #f4f4f4;
     text-align: center;
+}
+
+/* Sección de bienvenida */
+.welcome-container {
+    text-align: center;
+    padding: 100px 20px 50px;
+}
+
+.welcome-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.welcome-container p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Sección minimalista */
+#minimalist-text {
+    margin: 50px 0;
+    font-family: 'Aileron', sans-serif;
+    font-size: 2em;
+    color: #555;
+    font-style: italic;
+    text-align: center;
+}
+
+#minimalist-text blockquote {
+    quotes: "“" "”";
+}
+
+#minimalist-text blockquote::before {
+    content: open-quote;
+    font-size: 3em;
+    vertical-align: -0.4em;
+    color: #bbb;
+}
+
+#minimalist-text blockquote::after {
+    content: close-quote;
+    font-size: 3em;
+    vertical-align: -0.4em;
+    color: #bbb;
+}
+
+/* Galería de imágenes */
+.gallery-container {
+    margin: 30px auto;
+    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gallery-image {
+    width: calc(50% - 10px);
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    .gallery-image {
+        width: calc(25% - 10px);
+    }
+}
+
+/* Sección about */
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.about-text {
+    flex: 1;
+    margin-left: 20px;
 }
 
 /* Media Queries */
@@ -250,7 +486,35 @@ footer {
         gap: 1em;
     }
 
-    footer {
-        position: static;
+   
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .about-container {
+        flex-direction: column;
+    }
+
+    .about-text {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .map-container {
+        width: 100%;
+        height: 300px;
     }
 }

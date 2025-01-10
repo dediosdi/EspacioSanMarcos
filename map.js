@@ -23,3 +23,4 @@ map.on('click', function(e) {
   // Actualizar el contenido del popup con las nuevas coordenadas
   marcador.setPopupContent("Ubicación seleccionada: " + coords.lat.toFixed(4) + ", " + coords.lng.toFixed(4));
 });
+
