@@ -1,0 +1,256 @@
+@font-face {
+    font-family: 'Aileron'; 
+    src: url('fonts/aileron_0102/Aileron-Light.otf') format('truetype'); 
+}
+
+@font-face {
+    font-family: 'H2Font'; 
+    src: url('fonts/aileron_0102/Aileron-SemiBold.otf') format('truetype'); 
+}
+
+@font-face {
+    font-family: 'BodyFont'; 
+    src: url('fonts/aileron_0102/Aileron-Regular.otf') format('truetype'); 
+}
+
+body {
+    font-family: 'Aileron', sans-serif;
+    margin: 0;
+    padding: 0;
+   
+
+}
+
+h2 {
+    font-family: 'Aileron', sans-serif;
+    font-size: 3.4em;
+    color: #333;
+}
+
+header {
+    font-family: 'Aileron', sans-serif;
+    background-color: white;
+    color: #333;
+    padding: 1em 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+header .logo {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    flex-shrink: 0;
+}
+
+header nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1em;
+}
+
+header nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+}
+
+header nav ul li a::before,
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #333;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+header nav ul li a::before {
+    top: 0;
+}
+
+header nav ul li a::after {
+    bottom: 0;
+}
+
+header nav ul li a:hover::before,
+header nav ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+section {
+    padding: 2em;
+    text-align: center;
+    margin: 1em;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Cards del menú */
+.menu-cards {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    margin-top: 1em;
+}
+
+.menu-card {
+    text-align: center;
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-card img {
+    max-width: 80px;
+    margin-bottom: 0.5em;
+}
+
+.menu-card p {
+    font-family: 'H2Font', sans-serif;
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Secciones de platos */
+.dish {
+    padding: 2em;
+    text-align: center;
+    margin: 1em;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Centrando el contenido de la sección #home */
+#home {
+    background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)),
+    url('images/resto23.jpg');    display: flex;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+}
+/* Contenedor del mapa */
+.map-container {
+    width: 90%;
+    max-width: 900px;
+    height: 500px;
+    border-radius: 30px;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Estilo del mapa */
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Estilo para el botón hacia abajo */
+.scroll-button {
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.scroll-button:hover {
+    transform: translateY(5px);
+}
+
+/* Sección Conócenos */
+#about {
+    padding: 50px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav {
+        position: static;
+        transform: none;
+        margin-top: 1em;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 0.5em 0;
+    }
+
+    .menu-cards {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    footer {
+        position: static;
+    }
+}

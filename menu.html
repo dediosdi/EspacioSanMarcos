@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - Espacio San Marcos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+    <div class="header-container">
+        <img src="images/logo.jpeg" alt="Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html#home">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="index.html#reservations">Reservas</a></li>
+                <li><a href="index.html#about">Conócenos</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<body>
+    <section id="menu">
+        <h2>Menu</h2>
+        <div class="menu-cards">
+            <div class="menu-card" onclick="showDish('dish1')">
+                <img src="icons/cafe.png" alt="Dish 1 Icon">
+                <p>Café</p>
+            </div>
+            <div class="menu-card" onclick="showDish('dish2')">
+                <img src="icons/entrada.png" alt="Dish 2 Icon">
+                <p>Entradas</p>
+            </div>
+            <div class="menu-card" onclick="showDish('dish3')">
+                <img src="icons/pasteleria.png" alt="Dish 3 Icon">
+                <p>Pastelería</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="dish1" class="dish hidden">
+        <h3>Café</h3>
+        <p>Descripción y detalles sobre el Café.</p>
+    </section>
+
+    <section id="dish2" class="dish hidden">
+        <h3>Entradas</h3>
+        <p>Descripción y detalles sobre las Entradas.</p>
+    </section>
+
+    <section id="dish3" class="dish hidden">
+        <h3>Pastelería</h3>
+        <p>Descripción y detalles sobre la Pastelería.</p>
+    </section>
+
+    <footer>
+        <p>Contact us at: (123) 456-7890</p>
+    </footer>
+
+    <script>
+        function showDish(dishId) {
+            const dishes = document.querySelectorAll('.dish');
+            dishes.forEach(dish => dish.classList.add('hidden'));
+
+            const selectedDish = document.getElementById(dishId);
+            selectedDish.classList.remove('hidden');
+
+            selectedDish.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
+
