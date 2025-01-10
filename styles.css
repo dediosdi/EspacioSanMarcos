@@ -567,3 +567,14 @@ footer img.footer-logo {
         display: flex;
     }
 }
+
+.mobile-menu {
+    display: none;
+    /* Otros estilos para el menú */
+}
+
+.mobile-menu.active {
+    display: block;
+    /* Otros estilos para el menú activo */
+}
+
