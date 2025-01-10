@@ -178,27 +178,13 @@ footer {
     bottom: 0;
 }
 
-#main-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
-}
-
-#main-footer .footer-logos-container {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-#main-footer .footer-logo {
-    width: 100px;
-    height: auto;
+footer img.footer-logo {
+    width: 90px; /* Tamaño deseado para el ancho */
+    height: 40px; /* Tamaño deseado para la altura */
     filter: invert(100%) sepia(0%) saturate(100%) hue-rotate(0deg) brightness(100%) contrast(300%);
+    object-fit: contain; /* Ajusta la imagen dentro de las dimensiones */
+    display: inline-block; /* Asegúrate de que las imágenes se comporten como elementos en línea */
+    margin: 0 5px; /* Espaciado entre íconos */
 }
 
 
@@ -360,7 +346,7 @@ footer {
 #home {
     background-image: 
     linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)),
-    url('images/resto23.jpg');    display: flex;
+    url('images/resto.jpeg');    display: flex;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
