@@ -1,25 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú - Espacio San Marcos</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<header>
-    <div class="header-container">
-        <img src="images/logo.jpeg" alt="Logo" class="logo">
-        <nav>
-            <ul>
-                <li><a href="index.html#home">Inicio</a></li>
-                <li><a href="menu.html">Menú</a></li>
-                <li><a href="index.html#reservations">Reservas</a></li>
-                <li><a href="index.html#about">Conócenos</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
 <body>
+    <header>
+        <div class="header-container">
+            <a href="#home">
+                <img src="images/logo.jpeg" alt="Logo" class="logo">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="menu.html">Menú</a></li>
+                    <li><a href="#reservations">Reservas</a></li>
+                    <li><a href="#about">Conócenos</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
     <section id="menu">
         <h2>Menu</h2>
         <div class="menu-cards">
@@ -95,11 +102,7 @@
 
     <section id="dish4" class="dish hidden">
         <h3>Pizza</h3>
-        <p>Descripción y detalles sobre la Pastelería.</p>
-    </section>
-    <section id="dish5" class="dish hidden">
-        <h3>Pastelería</h3>
-        <p>Descripción y detalles sobre la Pastelería.</p>
+        <p>Descripción y detalles sobre la Pizza.</p>
     </section>
     <section id="dish5" class="dish hidden">
         <h3>Pastelería</h3>
@@ -119,6 +122,11 @@
 
             selectedDish.scrollIntoView({ behavior: 'smooth' });
         }
+
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        });
     </script>
 </body>
 </html>
