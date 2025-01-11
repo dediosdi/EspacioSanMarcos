@@ -13,7 +13,7 @@
     src: url('fonts/aileron_0102/Aileron-Regular.otf') format('truetype'); 
 }
 html {
-    scroll-behavior: smooth;
+    scroll-behavior:smooth
 }
 /* Estilos generales */
 body {
@@ -26,7 +26,7 @@ body {
 h2 {
     font-family: 'Aileron', sans-serif;
     font-size: 3.4em;
-    font-weight: lighter;q
+    font-weight: lighter;
     color: #333;
 }
 
@@ -399,9 +399,10 @@ footer img.footer-logo {
 
 /* Sección Conócenos */
 #about {
-    padding: 50px;
-    background-color: #f4f4f4;
-    text-align: center;
+    background: url('images/fondo.jpg');
+    padding: 20px;
+    border-radius: 10px; /* Opcional: esquinas redondeadas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Opcional: sombra */
 }
 
 /* Sección de bienvenida */
@@ -591,6 +592,12 @@ footer img.footer-logo {
 .social-bar a img {
     width: 15px;
     height: 15px;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.social-bar a img:hover {
+    transform: scale(1.2); /* Aumenta el tamaño del ícono al pasar el cursor */
+    filter: brightness(1.2); /* Aumenta el brillo del ícono al pasar el cursor */
 }
 
 /* Ocultar la barra en dispositivos móviles */
@@ -598,4 +605,12 @@ footer img.footer-logo {
     .social-bar {
         display: none;
     }
+}
+
+.logo {
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del logo al pasar el cursor */
 }
