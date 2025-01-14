@@ -2,12 +2,25 @@
 <html lang="es">
 <head>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="script.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú</title>
     <link rel="stylesheet" href="styles.css">
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault(); // Evita el envío tradicional del formulario
+
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const fecha = document.getElementById('fecha').value;
+            const hora = document.getElementById('hora').value;
+            const mensaje = `Hola, mi nombre es ${nombre}. Quiero realizar una reserva para la fecha ${fecha} a las ${hora}. Mi número de contacto es ${telefono}.`;
+
+            const whatsappURL = `https://wa.me/2317471695?text=${encodeURIComponent(mensaje)}`;
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -23,18 +36,27 @@
                     <li><a href="index.html#about">Conócenos</a></li>
                 </ul>
             </nav>
-        
         </div>
     </header>
-        <div class="welcome-container">
-            <h2>Opciones:</h2>
-            <p>Esta seccion puede hacerse de distintas maneras:<br>
-                <p> 1: Al hacer click en reservar puede redirigirse al usuario directamente al chat de whatsapp con ustedes(más economico).</p><br>
-                <p>  2: Que el usuario pueda llenar un formulario con sus datos, correo, fecha de reserva, etc y dichos datos se envien por correo electronico a ustedes.</p>
-                <img src="images/Juan di benedetto.png" alt="">
-            
-                <a href="#about" class="scroll-button"> <img src="icons/scrolldown.png"></a>
-        </div>
+    <section id="homeReservations">
+    <div class="welcome-container">
+        <h2>Reservar</h2>
+        <form id="reserva-form" onsubmit="enviarFormulario(event)">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required><br>
+
+            <label for="fecha">Fecha de Reserva:</label>
+            <input type="date" id="fecha" name="fecha" required><br>
+
+            <label for="hora">Hora de Reserva:</label>
+            <input type="time" id="hora" name="hora" required><br>
+
+            <button type="submit">Reservar</button>
+        </form>
+    </div>
     </section>
 
     <section id="minimalist-text">
@@ -43,13 +65,10 @@
         </blockquote>
     </section>
 
-
     <footer id="main-footer">
         <img src="icons/patrocinador1.png" class="footer-logo" alt="Logo 1">
         <img src="icons/patrocinador2.png" class="footer-logo" alt="Logo 2">
         <img src="icons/patrocinador3.png" class="footer-logo" alt="Logo 3">
-
     </footer>
-    
 </body>
 </html>

@@ -10,7 +10,13 @@
 
 @font-face {
     font-family: 'BodyFont'; 
-    src: url('fonts/aileron_0102/Aileron-Regular.otf') format('truetype'); 
+    src: url('fonts/aileron_0102/Aileron-Regular.otf') format('truetype');   
+}
+
+@font-face {
+    font-family: 'ItalicFont'; 
+    src: url('fonts/aileron_0102/Aileron-LightItalic.otf') format('truetype'); 
+
 }
 html {
     scroll-behavior:smooth
@@ -89,6 +95,7 @@ header {
     background-color: #333;
     border-radius: 10px;
 }
+
 
 nav ul {
     display: flex;
@@ -220,54 +227,177 @@ footer img.footer-logo {
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 /* Galería de imágenes */
 .about-gallery {
-    margin: 30px 0;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 2rem;
+    position: relative;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden cuando no hay espacio suficiente */
 }
 
 .about-gallery h3 {
-    font-family: 'H2Font', sans-serif;
-    font-size: 2em;
+    font-size: 2rem; /* Ajustar el tamaño para pantallas pequeñas */
+    font-family: ItalicFont;
+    color: #555;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+}
+
+.about-gallery p {
+    font-size: 0.9rem; /* Ajustar el tamaño para pantallas pequeñas */
+    font-family: Aileron;
     color: #333;
-    margin-bottom: 20px;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+}
+
+.text-section {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-right: 2rem;
+    position: relative;
+    text-decoration: none;
+    text-decoration-color: #333;
+}
+
+.text-section::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 10%;
+    bottom: 10%;
+    width: 2px;
+    background-color: #ccc;
 }
 
 .gallery-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 10px;
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding-left: 2rem;
 }
 
 .gallery-image {
-    width: calc(25% - 10px); /* Ajusta el tamaño de las imágenes */
+    width: 100%;
+    height: auto;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .gallery-image:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsive para la galería */
+/* GALERIA DE PLATOS: */
+.about-gallery2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70vh;
+    padding: 2rem;
+    position: relative;
+    flex-direction: row-reverse;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden cuando no hay espacio suficiente */
+}
+
+.about-gallery2 h3 {
+    font-size: 2rem; /* Ajustar el tamaño para pantallas pequeñas */
+    font-family: ItalicFont;
+    color: #555;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+}
+
+
+
+.about-gallery2 p {
+    font-size: 0.9rem; /* Ajustar el tamaño para pantallas pequeñas */
+    font-family: Aileron;
+    color: #555;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+}
+
+.gallery2-container {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding-right: 2rem;
+}
+
+.gallery2-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery2-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Media Queries para dispositivos móviles */
 @media (max-width: 768px) {
-    .gallery-image {
-        width: calc(50% - 10px); /* Ajusta el tamaño en pantallas medianas */
+    .about-gallery, .about-gallery2 {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .text-section {
+        flex: 1;
+        padding-right: 0;
+    }
+
+    .gallery-container, .gallery2-container {
+        grid-template-columns: 1fr; /* Una sola columna de imágenes */
+        padding-left: 0;
+    }
+
+    .gallery-image, .gallery2-image {
+        width: 100%;
+    }
+
+    .about-gallery h3, .about-gallery2 h3 {
+        font-size: 1.8rem;
     }
 }
 
+/* Media Queries para dispositivos pequeños */
 @media (max-width: 480px) {
-    .gallery-image {
-        width: 100%; /* Ajusta el tamaño en pantallas pequeñas */
+    .about-gallery h3, .about-gallery2 h3 {
+        font-size: 1.5rem; /* Ajuste más pequeño del tamaño de la fuente */
     }
 }
+
+
 /* Bloque de texto minimalista */
+#minimalist-text {
+    text-align: center;
+    margin: 50px 0;
+    font-family: 'Aileron', sans-serif;
+    font-size: 2em;
+    color: #555;
+    font-style: italic;
+}
+
 #minimalist-text {
     text-align: center;
     margin: 50px 0;
@@ -326,7 +456,6 @@ footer img.footer-logo {
 }
 
 
-
 /* Secciones de platos */
 .dish {
     padding: 2em;
@@ -346,6 +475,40 @@ footer img.footer-logo {
     background-image: 
     linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)),
     url('images/resto.jpeg');    display: flex;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+}
+
+#homeReservations {
+    background-image:  
+    linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)),
+    url('images/foodBrownie.jpg');   
+    display: flex;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #333;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+}
+
+#homeMenu{
+    background-image:  
+    linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)),
+    url('images/foodBrownie.jpg');   
+    display: flex;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -394,13 +557,13 @@ footer img.footer-logo {
 }
 
 .scroll-button:hover {
-    transform: translateY(5px);
+    transform: translateY(10px);
 }
 
 /* Sección Conócenos */
 #about {
     background: url('images/fondo.jpg');
-    padding: 20px;
+    padding: 0px;
     border-radius: 10px; /* Opcional: esquinas redondeadas */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Opcional: sombra */
 }
@@ -573,6 +736,8 @@ footer img.footer-logo {
     /* Otros estilos para el menú activo */
 }
 
+
+
 .social-bar {
     position: fixed;
     top: 0;
@@ -600,12 +765,7 @@ footer img.footer-logo {
     filter: brightness(1.2); /* Aumenta el brillo del ícono al pasar el cursor */
 }
 
-/* Ocultar la barra en dispositivos móviles */
-@media (max-width: 768px) {
-    .social-bar {
-        display: none;
-    }
-}
+
 
 .logo {
     transition: transform 0.3s ease-in-out;
@@ -614,3 +774,4 @@ footer img.footer-logo {
 .logo:hover {
     transform: scale(1.1); /* Aumenta el tamaño del logo al pasar el cursor */
 }
+
