@@ -1,3 +1,30 @@
+// <uniquifier>: Use a unique and descriptive class name
+
+
+.monsieur-la-doulaise-regular {
+    font-family: "Monsieur La Doulaise", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+.urbanist- {
+  font-family: "Urbanist", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.lilita-one-regular {
+    font-family: "Lilita One", serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Aileron Bold'; 
+    src: url('fonts/aileron_0102/Aileron-Bold.otf') format('truetype'); 
+}
+
 @font-face {
     font-family: 'Aileron'; 
     src: url('fonts/aileron_0102/Aileron-Light.otf') format('truetype'); 
@@ -30,9 +57,8 @@ body {
 }
 
 h2 {
-    font-family: 'Aileron', sans-serif;
+    font-family: 'Urbanist', sans-serif;
     font-size: 3.4em;
-    font-weight: lighter;
     color: #333;
 }
 
@@ -482,7 +508,6 @@ footer img.footer-logo {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    text-align: center;
     flex-direction: column;
     position: relative;
 }
