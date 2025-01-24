@@ -1,11 +1,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;1,100&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espacio San Marcos</title>
-    <link rel="icon" type="LOGO" href="icons/logoNoOficial.png"> <!-- Ruta al icono -->
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espacio San Marcos</title>
+<link rel="icon" type="LOGO" href="icons/logoNoOficial.png"> 
+<link rel="stylesheet" href="styles.css">
+
+<!-- Cargar correctamente el CSS de Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
 </head>
 <body>
     <header>
@@ -18,10 +22,9 @@
                     <li><a href="#home">Inicio</a></li>
                     <li><a href="menu.html">Menú</a></li>
                     <li><a href="reservations.html">Reservas</a></li>
-                    <li><a href="#about">Conócenos</a></li>
+                    <li><a href="#about">Conocenos</a></li>
                 </ul>
             </nav>
-          
         </div>
     </header>
     <section id="home">
@@ -70,49 +73,58 @@
               <img src="images/food6.jpg" alt="Espacio 6" class="gallery-image">
               <img src="images/food5.jpg" alt="Espacio 7" class="gallery-image">
               <img src="images/food8.jpg" alt="Espacio 8" class="gallery-image">
-
             </div>
           </div>
         </div>
 
-
-
-        <div class="about-gallery"><div class="text-section">
-            <h3>Dónde<br>Estamos</h3><br>
-            <p>Nos encontramos en Avenida San Martín 1257, en el corazón de la ciudad, frente a Plaza Belgrano, te esperamos para disfrutar de las mejores esquinas de 9 de Julio.</p>
+        <div class="about-gallery">
+            <div class="text-section">
+                <h3>Dónde<br>Estamos</h3><br>
+                <p>Nos encontramos en Avenida San Martín 1257, en el corazón de la ciudad, frente a Plaza Belgrano, te esperamos para disfrutar de las mejores zonas de 9 de Julio.</p>
         
-        </div>
+            </div>
             <div class="map-container">
                 <div id="map"></div>
-            </div><script src="map.js"></script>
             </div>
-            <div class="about-text">
-            </div>
+
+            <!-- Asegúrate de que el archivo JS de Leaflet esté cargado antes de tu archivo mapa.js -->
+            <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+            <script src="map.js"></script>
         </div>
     </section>
 
-
     <section id="minimalist-text">
-    <blockquote>
-        Un lugar de encuentro donde el diseño se fusiona con la gastronomía.
-    </blockquote>
-</section>
+        <blockquote>
+            Un lugar donde el diseño se fusiona con la gastronomía.
+        </blockquote>
+    </section>
 
-    <footer id="main-footer">
-        <img src="icons/patrocinador1.png" class="footer-logo" alt="Logo 1">
-        <img src="icons/patrocinador2.png" class="footer-logo" alt="Logo 2">
-        <img src="icons/patrocinador3.png" class="footer-logo" alt="Logo 3">
-        <p>Desarrollado por Juan Di Benedetto</p>
-
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="https://rosepattiserie.com.ar" target="_blank"><img src="icons/patrocinador1.png" class="footer-logo" alt="Logo 1"></a>
+                <a href="https://www.instagram.com/lucette.iluminacion/" target="_blank"><img src="icons/patrocinador2.png" class="footer-logo" alt="Logo 2"></a>
+                <a href="https://www.vaguada.com.ar/" target="_blank"><img src="icons/patrocinador3.png" class="footer-logo" alt="Logo 3"></a>        </div>
+           
+        </div>
+        <hr class="footer-line">
+        <div class="footer-bottom">
+            <p>Desarrollado por Juan Di Benedetto - Todos los derechos reservados ©</p>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank"><img src="icons/fbfooter.png" alt="Facebook"></a>
+                <a href="https://instagram.com" target="_blank"><img src="icons/igfooter.png"Instagram"></a>
+                <a href="https://wpp.com" target="_blank"><img src="icons/wppfooter.png"Whatsapp"></a>
+            </div>
+        </div>
     </footer>
+    
+
     
     <div class="social-bar">
         <a href="https://www.facebook.com" target="_blank"><img src="icons/facebook.png" alt="Facebook"></a>
         <a href="https://www.instagram.com" target="_blank"><img src="icons/instagram.png" alt="Instagram"></a>
         <a href="LINK WPP" target="_blank"><img src="icons/whatsapp.png" alt="LinkedIn"></a>
     </div>
-
-
-      
 </body>
 </html>

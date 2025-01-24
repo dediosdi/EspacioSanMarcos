@@ -1,5 +1,5 @@
 // Inicializar el mapa centrado en las coordenadas proporcionadas
-var map = L.map('map').setView([-35.44360474843392, -60.88616172348991], 18); // Coordenadas que me proporcionaste
+var map = L.map('map').setView([-35.44360474843392, -60.88616172348991], 18);
 
 // Usar una capa gris clara de CartoDB Positron
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
@@ -23,4 +23,5 @@ map.on('click', function(e) {
   // Actualizar el contenido del popup con las nuevas coordenadas
   marcador.setPopupContent("Ubicación seleccionada: " + coords.lat.toFixed(4) + ", " + coords.lng.toFixed(4));
 });
+
 

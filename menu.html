@@ -7,18 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Header */
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1em 20px;
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+     
 
         .nav-links {
             display: flex;
@@ -55,33 +44,14 @@
             border-radius: 10px;
         }
 
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                text-align: center;
-                background-color: white;
-                left: 0;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            
-
-            .menu-toggle {
-                display: flex;
-            }
-        }
+       
+        
     </style>
 </head>
 <body>
     <header>
         <div class="header-container">
-            <a href="#home">
+            <a href="index.html">
                 <img src="images/logo.jpeg" alt="Logo" class="logo">
             </a>
             <nav>
@@ -89,13 +59,10 @@
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="menu.html">Menú</a></li>
                     <li><a href="reservations.html">Reservas</a></li>
-                    <li><a href="index.html#about">Conócenos</a></li>
+                    <li><a href="#about">Conocenos</a></li>
                 </ul>
             </nav>
-            <button id="menu-toggle" class="menu-toggle">☰</button>
-            <nav id="mobile-menu" class="mobile-menu">
-               
-            </nav>
+          
         </div>
     </header>
     <section id="homeMenu">
