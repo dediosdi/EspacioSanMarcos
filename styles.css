@@ -566,7 +566,10 @@ footer img.footer-logo {
     height: 100vh;
     flex-direction: column;
     position: relative;
+    margin: 30px auto;
+
 }
+
 
 #homeReservations {
     background: rgb(86,87,79);
@@ -577,10 +580,70 @@ footer img.footer-logo {
     color: #fff;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     text-align: center;
     flex-direction: column;
     position: relative;
+    margin: 30px auto;
+    text-align: center;
+}
+    
+#homeReservations h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+label {
+    font-size: 16px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+input[type="number"] {
+    padding: 8px;
+    font-size: 14px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.footer-logo {
+    margin: 0 10px;
+    height: 50px;
 }
 
 #homeMenu{
@@ -656,7 +719,14 @@ footer img.footer-logo {
 .welcome-container h2 {
     font-size: 2.5em;
     margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+
 }
+.welcome-container h2:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del logo al pasar el cursor */
+}
+
+
 
 .welcome-container p {
     font-size: 1.2em;
